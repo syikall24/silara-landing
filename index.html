@@ -43,16 +43,16 @@
             background-color: #f7fffb; 
         }
 
-        /* --- Animasi Ombak (Ditinggikan & Diperbanyak) --- */
+        /* --- Animasi Ombak (Dibelakang Search Bar) --- */
         .waves {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 180px;
-            min-height: 180px;
-            max-height: 250px;
-            z-index: 1;
+            height: 220px; /* Tinggi ombak */
+            min-height: 220px;
+            max-height: 280px;
+            z-index: 0; /* Di belakang konten hero (z-10) */
         }
 
         .parallax > use {
@@ -73,8 +73,8 @@
 
         @media (max-width: 768px) {
             .waves {
-                height: 80px;
-                min-height: 80px;
+                height: 100px;
+                min-height: 100px;
             }
         }
     </style>
@@ -102,8 +102,8 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH MORE WAVE LAYERS -->
-    <section class="relative pt-12 md:pt-20 pb-56 px-4 overflow-hidden bg-gradient-to-b from-emerald-50/30 to-white text-center">
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 md:pt-20 pb-16 px-4 overflow-hidden bg-gradient-to-b from-emerald-50/30 to-white text-center">
         <!-- Decorative background blur -->
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-100 rounded-full blur-3xl opacity-40 -z-10"></div>
 
@@ -138,7 +138,7 @@
             </div>
         </div>
 
-        <!-- Wave SVG Element (Increased Height & Layers) -->
+        <!-- Wave SVG Element (Z-INDEX 0 - BEHIND CONTENT) -->
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
@@ -156,8 +156,8 @@
         </svg>
     </section>
 
-    <!-- DIRECTORY SECTION -->
-    <section id="direktori" class="bg-gray-50 py-16 px-4 border-t border-gray-100">
+    <!-- DIRECTORY SECTION (REDUCED TOP PADDING) -->
+    <section id="direktori" class="bg-gray-50 pt-8 pb-16 px-4 border-t border-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Direktori Layanan Publik</h2>
@@ -311,7 +311,7 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div class="flex gap-6">
                 <a href="https://forms.gle/xrtspGSQQrzJpzZ68" target="_blank" class="text-[11px] text-emerald-400 hover:text-white transition-colors font-bold uppercase tracking-wider">SURVEY KEPUASAN</a>
             </div>
@@ -339,6 +339,7 @@
     </a>
 
     <script>
+        // Data layanan lengkap (15 item) sesuai instruksi sebelumnya
         const services = [
             { id: 1, title: 'Pos Bantuan Hukum (Posbakum)', category: 'Lainnya', icon: 'heart-handshake', shortDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak...', fullDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak dalam pembuatan surat gugatan atau permohonan secara GRATIS. Jam Pelayanan: Senin-Jumat 08.00-16.00 (Istirahat: 12.00-14.00).', requirements: ['Membawa berkas persyaratan yang lengkap sesuai dengan perkara yang akan diajukan', 'Membawa KTP asli / Surat Keterangan', 'Membawa Fotokopi KTP dan KK', 'Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan/Desa (Khusus layanan Prodeo)'], procedures: ['Mengambil nomor antrean layanan Posbakum di mesin antrean PTSP', 'Menunggu panggilan sesuai nomor antrean', 'Konsultasi dan pembuatan draf gugatan/permohonan oleh petugas', 'Pemeriksaan kembali (Review) draf oleh pihak yang bersangkutan', 'Pencetakan (Printing) surat gugatan/permohonan yang telah selesai', 'Penandatanganan dokumen oleh pihak dan penyerahan ke Meja Pendaftaran'] },
             { id: 2, title: 'Cerai Gugat / Talak', category: 'Perceraian', icon: 'heart-off', shortDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak).', fullDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak) sesuai peraturan perundang-undangan.', requirements: ['KTP / Surat keterangan domisili asli and fotocopy', 'Buku nikah asli and fotocopy dilegalisir di kantor pos', 'Alamat lengkap suami/istri', 'Surat izin atasan jika PNS/POLRI/TNI/P3K', 'Email dan nomor whatsapp yang aktif', 'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran perkara di Meja 1 / E-Court', 'Pembayaran Panjar Biaya Perkara', 'Pemanggilan para pihak oleh Jurusita', 'Proses Mediasi', 'Persidangan', 'Putusan Pengadilan'] },
