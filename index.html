@@ -44,13 +44,13 @@
             background-color: #f0fdf4; 
         }
 
-        /* --- Animasi Ombak (Lebih Tinggi & Lebih Banyak Lapisan) --- */
+        /* --- Animasi Ombak (Tinggi & Padat) --- */
         .waves {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 480px; /* Tinggi ditingkatkan untuk mencapai area judul */
+            height: 480px; 
             min-height: 200px;
             max-height: 550px;
             z-index: 0; 
@@ -60,7 +60,6 @@
             animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
         }
         
-        /* Variasi kecepatan untuk setiap lapisan ombak */
         .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
         .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
         .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
@@ -68,7 +67,6 @@
         .parallax > use:nth-child(5) { animation-delay: -6s; animation-duration: 12s; }
         .parallax > use:nth-child(6) { animation-delay: -7s; animation-duration: 18s; }
         .parallax > use:nth-child(7) { animation-delay: -8s; animation-duration: 15s; }
-        .parallax > use:nth-child(8) { animation-delay: -9s; animation-duration: 25s; }
 
         @keyframes move-forever {
             0% { transform: translate3d(-90px, 0, 0); }
@@ -123,7 +121,7 @@
                 Pusat Layanan Informasi yang Cepat, Mudah, dan Efisien dalam Satu Sistem Terpadu Pengadilan Agama Kuala Tungkal.
             </p>
 
-            <!-- Search Bar -->
+            <!-- Search Bar with Clear Button -->
             <div class="relative max-w-2xl mx-auto group text-left">
                 <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                     <i data-lucide="search" class="h-6 w-6 text-gray-400"></i>
@@ -131,9 +129,13 @@
                 <input
                     id="search-input"
                     type="text"
-                    class="block w-full pl-14 pr-4 py-4 md:py-5 border border-gray-200 rounded-full text-base md:text-lg shadow-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-white/95 outline-none"
+                    class="block w-full pl-14 pr-14 py-4 md:py-5 border border-gray-200 rounded-full text-base md:text-lg shadow-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-white/95 outline-none"
                     placeholder="Cari prosedur, biaya, atau persyaratan..."
                 />
+                <!-- Tombol Cancel/X -->
+                <button id="clear-search" class="absolute inset-y-0 right-0 pr-5 flex items-center hidden text-gray-400 hover:text-red-500 transition-colors">
+                    <i data-lucide="circle-x" class="h-6 w-6"></i>
+                </button>
             </div>
 
             <!-- Quick Links -->
@@ -142,22 +144,20 @@
             </div>
         </div>
 
-        <!-- Wave SVG Element (Z-INDEX 0 - MULTIPLE LAYERS) -->
+        <!-- Wave SVG Element -->
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g class="parallax">
-                <!-- Tambah lapisan ombak untuk efek yang lebih padat dan tinggi -->
                 <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(16, 185, 129, 0.02)" />
-                <use xlink:href="#gentle-wave" x="48" y="1" fill="rgba(16, 185, 129, 0.04)" />
-                <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(16, 185, 129, 0.01)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(16, 185, 129, 0.03)" />
-                <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(16, 185, 129, 0.02)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(16, 185, 129, 0.05)" />
-                <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(16, 185, 129, 0.02)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(16, 185, 129, 0.04)" />
+                <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(16, 185, 129, 0.01)" />
+                <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(16, 185, 129, 0.03)" />
+                <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(16, 185, 129, 0.02)" />
+                <use xlink:href="#gentle-wave" x="48" y="10" fill="rgba(16, 185, 129, 0.01)" />
+                <use xlink:href="#gentle-wave" x="48" y="12" fill="#fff" />
             </g>
         </svg>
     </section>
@@ -204,26 +204,31 @@
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
                         <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-emerald-100 z-0"></div>
                         
+                        <!-- Step 1 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">1</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pendaftaran Akun</h4>
                             <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
                         </div>
+                        <!-- Step 2 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">2</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Login Aplikasi</h4>
                             <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
                         </div>
+                        <!-- Step 3 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">3</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pemeriksaan Produk</h4>
                             <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil.</p>
                         </div>
+                        <!-- Step 4 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">4</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pembayaran</h4>
                             <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
                         </div>
+                        <!-- Step 5 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">5</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pengambilan Produk</h4>
@@ -313,7 +318,7 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div class="flex gap-6">
                 <!-- Highlighted Survey Kepuasan Button -->
                 <a href="https://forms.gle/xrtspGSQQrzJpzZ68" target="_blank" class="flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl text-sm font-extrabold uppercase tracking-wider transition-all shadow-xl hover:shadow-emerald-500/20 hover:-translate-y-1 active:translate-y-0 group border border-emerald-400/30">
@@ -348,7 +353,7 @@
     </a>
 
     <script>
-        // Data layanan lengkap (15 item) sesuai instruksi sebelumnya
+        // --- Data Layanan (15 item) ---
         const services = [
             { id: 1, title: 'Pos Bantuan Hukum (Posbakum)', category: 'Lainnya', icon: 'heart-handshake', shortDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak...', fullDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak dalam pembuatan surat gugatan atau permohonan secara GRATIS. Jam Pelayanan: Senin-Jumat 08.00-16.00 (Istirahat: 12.00-14.00).', requirements: ['Membawa berkas persyaratan yang lengkap sesuai dengan perkara yang akan diajukan', 'Membawa KTP asli / Surat Keterangan', 'Membawa Fotokopi KTP dan KK', 'Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan/Desa (Khusus layanan Prodeo)'], procedures: ['Mengambil nomor antrean layanan Posbakum di mesin antrean PTSP', 'Menunggu panggilan sesuai nomor antrean', 'Konsultasi dan pembuatan draf gugatan/permohonan oleh petugas', 'Pemeriksaan kembali (Review) draf oleh pihak yang bersangkutan', 'Pencetakan (Printing) surat gugatan/permohonan yang telah selesai', 'Penandatanganan dokumen oleh pihak dan penyerahan ke Meja Pendaftaran'] },
             { id: 2, title: 'Cerai Gugat / Talak', category: 'Perceraian', icon: 'heart-off', shortDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak).', fullDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak) sesuai peraturan perundang-undangan.', requirements: ['KTP / Surat keterangan domisili asli and fotocopy', 'Buku nikah asli and fotocopy dilegalisir di kantor pos', 'Alamat lengkap suami/istri', 'Surat izin atasan jika PNS/POLRI/TNI/P3K', 'Email dan nomor whatsapp yang aktif', 'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran perkara di Meja 1 / E-Court', 'Pembayaran Panjar Biaya Perkara', 'Pemanggilan para pihak oleh Jurusita', 'Proses Mediasi', 'Persidangan', 'Putusan Pengadilan'] },
@@ -427,13 +432,13 @@
             const header = document.getElementById('modal-header');
             header.innerHTML = `
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 border border-emerald-200">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 border border-emerald-100">
                         <i data-lucide="${s.icon}" class="w-6 h-6"></i>
                     </div>
                     <div>
                         <h2 class="text-xl md:text-2xl font-extrabold text-gray-900">${s.title}</h2>
                         <div class="flex items-center gap-2 mt-1">
-                            <span class="text-[10px] font-bold text-emerald-700 uppercase bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">${s.category}</span>
+                            <span class="text-[10px] font-bold text-emerald-700 uppercase bg-emerald-100 px-2 py-0.5 rounded border border-emerald-100">${s.category}</span>
                             <span class="text-[10px] text-gray-400 font-bold flex items-center gap-1"><i data-lucide="info" class="w-3 h-3"></i> INFORMASI PUBLIK</span>
                         </div>
                     </div>
@@ -499,9 +504,26 @@
             }, 300);
         }
 
-        document.getElementById('search-input').addEventListener('input', (e) => {
+        // Logic Search with Clear Button
+        const searchInput = document.getElementById('search-input');
+        const clearBtn = document.getElementById('clear-search');
+
+        searchInput.addEventListener('input', (e) => {
             searchQuery = e.target.value;
+            if (searchQuery.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
             renderServices();
+        });
+
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchQuery = '';
+            clearBtn.classList.add('hidden');
+            renderServices();
+            searchInput.focus();
         });
 
         window.onload = () => {
@@ -510,7 +532,7 @@
             lucide.createIcons();
             const chips = ['Posbakum', 'Gono Gini', 'Waris', 'E-Court', 'Isbat Nikah'];
             document.getElementById('quick-links').innerHTML += chips.map(c => `
-                <button onclick="document.getElementById('search-input').value='${c}'; searchQuery='${c}'; renderServices();" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-bold text-gray-600 hover:border-emerald-500 transition-all shadow-sm">${c}</button>
+                <button onclick="document.getElementById('search-input').value='${c}'; searchQuery='${c}'; document.getElementById('clear-search').classList.remove('hidden'); renderServices();" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-bold text-gray-600 hover:border-emerald-500 transition-all shadow-sm">${c}</button>
             `).join('');
         }
     </script>
