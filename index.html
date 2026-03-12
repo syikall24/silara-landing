@@ -38,12 +38,61 @@
             -webkit-box-orient: vertical;  
             overflow: hidden;
         }
+        
+        .service-card-bg {
+            background-color: #f7fffb; 
+        }
+
+        /* --- Animasi Ombak --- */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            min-height: 100px;
+            max-height: 150px;
+            z-index: 1;
+        }
+
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+
+        @keyframes move-forever {
+            0% { transform: translate3d(-90px, 0, 0); }
+            100% { transform: translate3d(85px, 0, 0); }
+        }
+
+        /* Sembunyikan ombak di layar sangat kecil jika perlu, atau sesuaikan tinggi */
+        @media (max-width: 768px) {
+            .waves {
+                height: 40px;
+                min-height: 40px;
+            }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
     <!-- NAVBAR -->
-    <nav class="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
@@ -63,10 +112,10 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-12 md:pt-20 pb-16 px-4 overflow-hidden">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-100 rounded-full blur-3xl opacity-50 -z-10"></div>
-        <div class="absolute bottom-[-10%] right-[-5%] w-[30%] h-[30%] bg-teal-50 rounded-full blur-3xl opacity-60 -z-10"></div>
+    <!-- HERO SECTION WITH WAVE ANIMATION -->
+    <section class="relative pt-12 md:pt-20 pb-32 px-4 overflow-hidden bg-gradient-to-b from-emerald-50/30 to-white">
+        <!-- Decorative background blur -->
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-100 rounded-full blur-3xl opacity-40 -z-10"></div>
 
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <p class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">Digital Government Service</p>
@@ -85,7 +134,7 @@
                 <input
                     id="search-input"
                     type="text"
-                    class="block w-full pl-14 pr-4 py-4 md:py-5 border border-gray-200 rounded-full text-base md:text-lg shadow-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-white/90 outline-none"
+                    class="block w-full pl-14 pr-4 py-4 md:py-5 border border-gray-200 rounded-full text-base md:text-lg shadow-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-white/95 outline-none"
                     placeholder="Cari prosedur, biaya, atau persyaratan..."
                 />
             </div>
@@ -95,6 +144,20 @@
                 <span class="text-gray-400 font-medium uppercase tracking-wide text-[10px] w-full md:w-auto mb-2 md:mb-0">Sering Dicari:</span>
             </div>
         </div>
+
+        <!-- Wave SVG Element -->
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(16, 185, 129, 0.03)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(16, 185, 129, 0.05)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(16, 185, 129, 0.02)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
     </section>
 
     <!-- DIRECTORY SECTION -->
@@ -134,7 +197,7 @@
                 </div>
 
                 <div class="lg:w-2/3 bg-gray-50 rounded-3xl p-6 md:p-8 border border-gray-100">
-                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8 text-center">Alur Panduan Pengambilan Produk</h3>
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8 text-center uppercase">Alur Panduan Pengambilan Produk</h3>
                     
                     <p class="text-center text-gray-600 text-sm mb-10 max-w-2xl mx-auto leading-relaxed">
                         Ikuti 5 langkah mudah berikut untuk melakukan pendaftaran hingga pengambilan produk secara mandiri melalui sistem EAC.
@@ -146,27 +209,27 @@
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">1</div>
                             <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pendaftaran Akun</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email). Klik link aktivasi yang dikirimkan ke email Anda.</p>
+                            <p class="text-[9px] text-gray-500 leading-tight">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
                         </div>
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">2</div>
                             <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Login Aplikasi</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Gunakan username dan password yang telah didapat dari email aktivasi untuk masuk ke dashboard portal EAC.</p>
+                            <p class="text-[9px] text-gray-500 leading-tight">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
                         </div>
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">3</div>
                             <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pemeriksaan Produk</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil (Akta Cerai atau Salinan Putusan), lalu centang pilihan tersebut.</p>
+                            <p class="text-[9px] text-gray-500 leading-tight">Pilih menu "Periksa Produk", tentukan produk (Akta Cerai/Salinan Putusan).</p>
                         </div>
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">4</div>
                             <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pembayaran</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Pilih metode pembayaran (VA/Transfer). Setelah bayar, tunggu proses validasi oleh petugas pengadilan.</p>
+                            <p class="text-[9px] text-gray-500 leading-tight">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
                         </div>
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">5</div>
                             <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pengambilan Produk</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Setelah tervalidasi, tombol unduh akan muncul. Perlu diingat, pengunduhan dokumen hanya bisa dilakukan satu kali.</p>
+                            <p class="text-[9px] text-gray-500 leading-tight">Setelah tervalidasi, tombol unduh muncul. Unduh hanya bisa dilakukan satu kali.</p>
                         </div>
                     </div>
 
@@ -185,7 +248,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (MATCHING image_b7fc01.png) -->
+    <!-- FOOTER -->
     <footer class="bg-[#003820] text-white py-16">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Col 1: Branding -->
@@ -216,7 +279,12 @@
                     <div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div> KONTAK RESMI
                 </h3>
                 <ul class="space-y-5 text-sm">
-                    <li class="flex gap-4"><i data-lucide="map-pin" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i> <span class="leading-snug">Tungkal Ilir, Jl. Prof. Dr. Soedewi, Tanjung Jabung Barat, Kota Jambi, 36551</span></li>
+                    <li class="flex gap-4">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i> 
+                        <a href="https://maps.app.goo.gl/tCFniS8YYE3XmMqF9" target="_blank" class="leading-snug hover:text-emerald-400 transition-colors">
+                            Jl. Prof. Dr. Sri Soedewi MS. SH, Kuala Tungkal, Desa Pembengis, Kecamatan Bram Itam, Kabupaten Tanjung Jabung Barat, Provinsi Jambi.
+                        </a>
+                    </li>
                     <li class="flex gap-4 items-center"><i data-lucide="phone" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span>(0742) 21082</span></li>
                     <li class="flex gap-4 items-center"><i data-lucide="message-circle" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span>0851-8554-8843</span></li>
                     <li class="flex gap-4 items-center"><i data-lucide="mail" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span>pa_kualatungkal@yahoo.co.id</span></li>
@@ -249,11 +317,9 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Survey Kepuasan di sebelah kiri -->
             <div class="flex gap-6">
                 <a href="https://forms.gle/xrtspGSQQrzJpzZ68" target="_blank" class="text-[11px] text-emerald-400 hover:text-white transition-colors font-bold uppercase tracking-wider">SURVEY KEPUASAN</a>
             </div>
-            <!-- Copyright di sebelah kanan -->
             <p class="text-[11px] text-emerald-500 font-bold uppercase tracking-widest">&copy; 2026 PENGADILAN AGAMA KUALA TUNGKAL</p>
         </div>
     </footer>
@@ -279,355 +345,21 @@
 
     <script>
         const services = [
-            {
-                id: 1,
-                title: 'Pos Bantuan Hukum (Posbakum)',
-                category: 'Lainnya',
-                shortDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak...',
-                fullDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak dalam pembuatan surat gugatan atau permohonan secara GRATIS. Jam Pelayanan: Senin-Jumat 08.00-16.00 (Istirahat: 12.00-14.00).',
-                requirements: [
-                    'Membawa berkas persyaratan yang lengkap sesuai dengan perkara yang akan diajukan',
-                    'Membawa KTP asli / Surat Keterangan',
-                    'Membawa Fotokopi KTP dan KK',
-                    'Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan/Desa (Khusus layanan Prodeo)'
-                ],
-                procedures: [
-                    'Mengambil nomor antrean layanan Posbakum di mesin antrean PTSP',
-                    'Menunggu panggilan sesuai nomor antrean',
-                    'Konsultasi dan pembuatan draf gugatan/permohonan oleh petugas',
-                    'Pemeriksaan kembali (Review) draf oleh pihak yang bersangkutan',
-                    'Pencetakan (Printing) surat gugatan/permohonan yang telah selesai',
-                    'Penandatanganan dokumen oleh pihak dan penyerahan ke Meja Pendaftaran'
-                ]
-            },
-            {
-                id: 2,
-                title: 'Cerai Gugat / Talak',
-                category: 'Perceraian',
-                shortDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak).',
-                fullDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak) sesuai peraturan perundang-undangan.',
-                requirements: [
-                    'KTP / Surat keterangan domisili asli and fotocopy',
-                    'Buku nikah asli and fotocopy dilegalisir di kantor pos',
-                    'Alamat lengkap suami/istri',
-                    'Surat izin atasan jika PNS/POLRI/TNI/P3K',
-                    'Email dan nomor whatsapp yang aktif',
-                    'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Fotocopy menggunakan ukuran kertas A4'
-                ],
-                procedures: [
-                    'Pendaftaran perkara di Meja 1 / E-Court',
-                    'Pembayaran Panjar Biaya Perkara',
-                    'Pemanggilan para pihak oleh Jurusita',
-                    'Proses Mediasi',
-                    'Persidangan',
-                    'Putusan Pengadilan'
-                ]
-            },
-            {
-                id: 3,
-                title: 'Dispensasi Kawin',
-                category: 'Perkawinan',
-                shortDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.',
-                fullDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.',
-                requirements: [
-                    'KTP / Surat domisili asli kedua orang tua calon pengantin yang di bawah umur',
-                    'KTP / surat domisili asli kedua calon pengantin',
-                    'KK kedua calon pengantin',
-                    'Akta kelahiran kedua calon pengantin',
-                    'Ijazah terakhir kedua calon pengantin',
-                    'Surat keterangan penolakan dari KUA',
-                    'Asesmen psikolog',
-                    'Pemeriksaan kesehatan lengkap dan/atau kesiapan organ reproduksi dari Puskesmas/RSUD',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–8 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Pemeriksaan identitas dan alasan mendesak',
-                    'Persidangan dengan menghadirkan calon mempelai dan orang tua',
-                    'Penetapan Hakim'
-                ]
-            },
-            {
-                id: 4,
-                title: 'Isbat Nikah',
-                category: 'Perkawinan',
-                shortDesc: 'Pengesahan pernikahan yang sudah terjadi namun belum tercatat secara resmi.',
-                fullDesc: 'Pengesahan pernikahan yang sudah terjadi namun belum tercatat secara resmi.',
-                requirements: [
-                    'KTP asli and fotocopy kedua pemohon',
-                    'KK asli kedua pemohon',
-                    'Fotocopy akta cerai bagi pemohon berstatus duda atau janda',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–3 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Pemeriksaan saksi-saksi',
-                    'Sidang pembuktian',
-                    'Penetapan pengesahan'
-                ]
-            },
-            {
-                id: 5,
-                title: 'Isbat Nikah - Cerai Gugat/Talak',
-                category: 'Perceraian',
-                shortDesc: 'Pengesahan nikah sekaligus pengajuan perceraian dalam satu perkara.',
-                fullDesc: 'Pengesahan nikah sekaligus pengajuan perceraian dalam satu perkara.',
-                requirements: [
-                    'KTP asli and fotocopy Penggugat/Pemohon',
-                    'KK asli Penggugat/Pemohon',
-                    'Fotocopy KTP atau KK Tergugat/Termohon',
-                    'Fotocopy akta cerai bagi Penggugat/Pemohon berstatus duda atau janda',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–4 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Pemeriksaan saksi untuk pernikahan',
-                    'Pemeriksaan alasan perceraian',
-                    'Putusan / Penetapan'
-                ]
-            },
-            {
-                id: 6,
-                title: 'Penetapan Asal Usul Anak',
-                category: 'Lainnya',
-                shortDesc: 'Permohonan untuk menetapkan status hukum anak terhadap orang tuanya.',
-                fullDesc: 'Permohonan untuk menetapkan status hukum anak terhadap orang tuanya.',
-                requirements: [
-                    'Buku nikah asli',
-                    'KK asli',
-                    'Akta kelahiran anak / Surat keterangan lahir asli',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–3 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Persidangan',
-                    'Pemeriksaan saksi',
-                    'Penetapan hakim'
-                ]
-            },
-            {
-                id: 7,
-                title: 'Penetapan Ahli Waris',
-                category: 'Kewarisan',
-                shortDesc: 'Permohonan untuk menetapkan siapa saja yang menjadi ahli waris dari pewaris yang meninggal dunia.',
-                fullDesc: 'Permohonan untuk menetapkan siapa saja yang menjadi ahli waris dari pewaris yang meninggal dunia.',
-                requirements: [
-                    'KTP asli',
-                    'KK asli',
-                    'Akta kelahiran seluruh anak almarhum',
-                    'Buku nikah almarhum',
-                    'Surat keterangan kematian almarhum',
-                    'Surat keterangan kematian orang tua almarhum jika sudah meninggal',
-                    'Surat keterangan ahli waris dari desa/kelurahan',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–7 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Persidangan',
-                    'Pemeriksaan bukti silsilah',
-                    'Penetapan ahli waris'
-                ]
-            },
-            {
-                id: 8,
-                title: 'Penetapan Wali Adhol',
-                category: 'Perkawinan',
-                shortDesc: 'Permohonan penggantian wali nikah karena wali nasab enggan atau menolak menikahkan.',
-                fullDesc: 'Permohonan penggantian wali nikah karena wali nasab enggan atau menolak menikahkan.',
-                requirements: [
-                    'KTP / Surat Keterangan Domisili asli',
-                    'Buku nikah orang tua',
-                    'KK pemohon',
-                    'Surat keterangan penolakan dari KUA',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–4 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Persidangan',
-                    'Upaya mediasi wali nasab oleh hakim',
-                    'Penetapan wali hakim'
-                ]
-            },
-            {
-                id: 9,
-                title: 'Hak Asuh Anak',
-                category: 'Perceraian',
-                shortDesc: 'Pengajuan hak pemeliharaan anak pasca perceraian.',
-                fullDesc: 'Pengajuan hak pemeliharaan anak pasca perceraian.',
-                requirements: [
-                    'Fotocopy KTP / Surat keterangan domisili',
-                    'Fotocopy akta cerai',
-                    'Fotocopy akta kelahiran anak',
-                    'Alamat lengkap mantan suami/istri',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–3 dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Persidangan',
-                    'Pemeriksaan kelayakan pengasuhan',
-                    'Putusan hak asuh'
-                ]
-            },
-            {
-                id: 10,
-                title: 'Perwalian oleh Orang Tua',
-                category: 'Lainnya',
-                shortDesc: 'Pengajuan perwalian oleh salah satu orang tua karena alasan tertentu (misalnya pasangan meninggal).',
-                fullDesc: 'Pengajuan perwalian oleh salah satu orang tua karena alasan tertentu (misalnya pasangan meninggal).',
-                requirements: [
-                    'KTP / Surat keterangan domisili asli pemohon',
-                    'KK pemohon',
-                    'Buku nikah pemohon',
-                    'Akta kelahiran anak',
-                    'Akta kematian orang tua anak yang meninggal',
-                    'Surat obyek yang membutuhkan perwalian',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–6 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Pemeriksaan saksi',
-                    'Sidang penetapan',
-                    'Penetapan perwalian'
-                ]
-            },
-            {
-                id: 11,
-                title: 'Pengangkatan Anak (Adopsi)',
-                category: 'Lainnya',
-                shortDesc: 'Prosedur pengangkatan anak secara sah menurut hukum.',
-                fullDesc: 'Prosedur pengangkatan anak secara sah menurut hukum.',
-                requirements: [
-                    'KTP dan KK Calon Orang Tua Angkat',
-                    'Fotocopy Akta Kelahiran & Buku Nikah Calon Orang Tua Angkat',
-                    'Surat Keterangan Sehat & Kesehatan Jiwa dari RS Pemerintah',
-                    'SKCK Setempat',
-                    'Fotocopy KK & Buku Nikah Orang Tua Kandung',
-                    'Fotocopy Akta Kelahiran Anak',
-                    'Rekomendasi Instansi Sosial & Izin Pengangkatan Anak',
-                    'Surat Izin Orang Tua Kandung bermeterai',
-                    'Surat Keterangan Tidak Mampu/Meninggal Dunia (jika perlu)',
-                    'Surat Keterangan Penghasilan & Pernyataan kepentingan terbaik anak bermeterai',
-                    'Kronologis anak & Jaminan keabsahan dokumen bermeterai',
-                    'Email dan whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Fotocopy menggunakan ukuran kertas A4'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Home visit oleh Pekerja Sosial',
-                    'Sidang pembuktian',
-                    'Penetapan Adopsi'
-                ]
-            },
-            {
-                id: 12,
-                title: 'Izin Poligami',
-                category: 'Perkawinan',
-                shortDesc: 'Pengajuan izin bagi suami untuk beristri lebih dari satu orang.',
-                fullDesc: 'Pengajuan izin bagi suami untuk beristri lebih dari satu orang.',
-                requirements: [
-                    'KTP Pemohon, Isteri Pertama & Calon Isteri',
-                    'KK Pemohon & Buku Nikah',
-                    'Surat Izin Atasan jika PNS/POLRI/TNI',
-                    'Surat Keterangan Status Calon Isteri & Penghasilan dari Desa',
-                    'Surat Pernyataan Sanggup Berlaku Adil bermeterai',
-                    'Surat Pernyataan Tidak Keberatan Dimadu dari Isteri Pertama',
-                    'Surat Pernyataan Siap menjadi Isteri Kedua',
-                    'Surat Keterangan Harta Bersama dengan Isteri Pertama',
-                    'Surat Pernyataan Calon Isteri tidak akan mengganggu harta bersama',
-                    'Email dan Whatsapp yang aktif',
-                    'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–11 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Sidang pemeriksaan kemampuan finansial',
-                    'Pemeriksaan persetujuan isteri pertama',
-                    'Putusan Izin Poligami'
-                ]
-            },
-            {
-                id: 13,
-                title: 'Gugatan Waris',
-                category: 'Kewarisan',
-                shortDesc: 'Sengketa pembagian harta warisan di antara para ahli waris.',
-                fullDesc: 'Sengketa pembagian harta warisan di antara para ahli waris.',
-                requirements: [
-                    'KTP / Surat Keterangan Domisili Asli Penggugat',
-                    'Akta Kematian Pewaris & Akta Kematian Ahli Waris',
-                    'Akta Kelahiran & KK para Penggugat',
-                    'Silsilah/Ranji Keluarga Pewaris and Ahli Waris',
-                    'Bukti Kepemilikan Harta yang digugat',
-                    'Email dan Whatsapp yang aktif',
-                    'Surat Gugatan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Poin 1–7 difotocopy and dilegalisir di kantor pos (ukuran kertas A4)'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Upaya Mediasi (Wajib)',
-                    'Sidang Jawab-Menjawab',
-                    'Pembuktian & Pemeriksaan Setempat (Descente)',
-                    'Putusan Pembagian'
-                ]
-            },
-            {
-                id: 14,
-                title: 'Layanan E-Court (E-Litigation)',
-                category: 'Lainnya',
-                shortDesc: 'Alur tata cara persidangan secara elektronik di Pengadilan Agama Kuala Tungkal.',
-                fullDesc: 'Alur tata cara persidangan secara elektronik di Pengadilan Agama Kuala Tungkal.',
-                requirements: [
-                    'Memiliki akun E-Court yang sudah terverifikasi',
-                    'Persetujuan tertulis dari para pihak untuk beracara secara elektronik',
-                    'Dokumen bukti dalam format digital (PDF/JPG)',
-                    'Alamat email aktif untuk menerima notifikasi persidangan'
-                ],
-                procedures: [
-                    'Sidang Pertama & Persetujuan',
-                    'Mediasi',
-                    'Jawab-Menjawab (E-Litigation)',
-                    'Pembuktian Dokumen Digital',
-                    'Kesimpulan & Putusan Elektronik'
-                ]
-            },
-            {
-                id: 15,
-                title: 'Harta Bersama (Gono Gini)',
-                category: 'Perceraian',
-                shortDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.',
-                fullDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.',
-                requirements: [
-                    'Fotocopy KTP / Surat Keterangan Domisili Asli Penggugat',
-                    'Fotocopy Bukti Kepemilikan Harta dilegalisir di Kantor Pos',
-                    'Fotocopy Akta Cerai Penggugat dilegalisir di Kantor Pos',
-                    'Email dan Whatsapp yang aktif',
-                    'Surat Gugatan 5 Rangkap (Pembuatan Gratis di Posbakum)',
-                    'Catatan: Fotocopy menggunakan ukuran kertas A4'
-                ],
-                procedures: [
-                    'Pendaftaran',
-                    'Mediasi',
-                    'Pembuktian kepemilikan harta',
-                    'Putusan Pembagian'
-                ]
-            }
+            { id: 1, title: 'Pos Bantuan Hukum (Posbakum)', category: 'Lainnya', icon: 'heart-handshake', shortDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak...', fullDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak dalam pembuatan surat gugatan atau permohonan secara GRATIS. Jam Pelayanan: Senin-Jumat 08.00-16.00 (Istirahat: 12.00-14.00).', requirements: ['Membawa berkas persyaratan yang lengkap sesuai dengan perkara yang akan diajukan', 'Membawa KTP asli / Surat Keterangan', 'Membawa Fotokopi KTP dan KK', 'Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan/Desa (Khusus layanan Prodeo)'], procedures: ['Mengambil nomor antrean layanan Posbakum di mesin antrean PTSP', 'Menunggu panggilan sesuai nomor antrean', 'Konsultasi dan pembuatan draf gugatan/permohonan oleh petugas', 'Pemeriksaan kembali (Review) draf oleh pihak yang bersangkutan', 'Pencetakan (Printing) surat gugatan/permohonan yang telah selesai', 'Penandatanganan dokumen oleh pihak dan penyerahan ke Meja Pendaftaran'] },
+            { id: 2, title: 'Cerai Gugat / Talak', category: 'Perceraian', icon: 'heart-off', shortDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak).', fullDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak) sesuai peraturan perundang-undangan.', requirements: ['KTP / Surat keterangan domisili asli and fotocopy', 'Buku nikah asli and fotocopy dilegalisir di kantor pos', 'Alamat lengkap suami/istri', 'Surat izin atasan jika PNS/POLRI/TNI/P3K', 'Email dan nomor whatsapp yang aktif', 'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran perkara di Meja 1 / E-Court', 'Pembayaran Panjar Biaya Perkara', 'Pemanggilan para pihak oleh Jurusita', 'Proses Mediasi', 'Persidangan', 'Putusan Pengadilan'] },
+            { id: 3, title: 'Dispensasi Kawin', category: 'Perkawinan', icon: 'calendar-clock', shortDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.', fullDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.', requirements: ['KTP / Surat domisili asli kedua orang tua calon pengantin yang di bawah umur', 'KTP / surat domisili asli kedua calon pengantin', 'KK kedua calon pengantin', 'Akta kelahiran kedua calon pengantin', 'Ijazah terakhir kedua calon pengantin', 'Surat keterangan penolakan dari KUA', 'Asesmen psikolog', 'Pemeriksaan kesehatan lengkap dan/atau kesiapan organ reproduksi dari Puskesmas/RSUD', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–8 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan identitas dan alasan mendesak', 'Persidangan dengan menghadirkan calon mempelai dan orang tua', 'Penetapan Hakim'] },
+            { id: 4, title: 'Isbat Nikah', category: 'Perkawinan', icon: 'scroll', shortDesc: 'Pengesahan pernikahan yang sudah terjadi namun belum tercatat secara resmi.', fullDesc: 'Pengesahan pernikahan yang sudah terjadi namun belum tercatat secara resmi.', requirements: ['KTP asli and fotocopy kedua pemohon', 'KK asli kedua pemohon', 'Fotocopy akta cerai bagi pemohon berstatus duda atau janda', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–3 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan saksi-saksi', 'Sidang pembuktian', 'Penetapan pengesahan'] },
+            { id: 5, title: 'Isbat Nikah - Cerai Gugat/Talak', category: 'Perceraian', icon: 'files', shortDesc: 'Pengesahan nikah sekaligus pengajuan perceraian dalam satu perkara.', fullDesc: 'Pengesahan nikah sekaligus pengajuan perceraian dalam satu perkara.', requirements: ['KTP asli and fotocopy Penggugat/Pemohon', 'KK asli Penggugat/Pemohon', 'Fotocopy KTP atau KK Tergugat/Termohon', 'Fotocopy akta cerai bagi Penggugat/Pemohon berstatus duda atau janda', 'Email dan whatsapp yang aktif', 'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–4 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan saksi untuk pernikahan', 'Pemeriksaan alasan perceraian', 'Putusan / Penetapan'] },
+            { id: 6, title: 'Penetapan Asal Usul Anak', category: 'Lainnya', icon: 'baby', shortDesc: 'Permohonan untuk menetapkan status hukum anak terhadap orang tuanya.', fullDesc: 'Permohonan untuk menetapkan status hukum anak terhadap orang tuanya.', requirements: ['Buku nikah asli', 'KK asli', 'Akta kelahiran anak / Surat keterangan lahir asli', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–3 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Persidangan', 'Pemeriksaan saksi', 'Penetapan hakim'] },
+            { id: 7, title: 'Penetapan Ahli Waris', category: 'Kewarisan', icon: 'users', shortDesc: 'Permohonan untuk menetapkan siapa saja yang menjadi ahli waris dari pewaris.', fullDesc: 'Permohonan untuk menetapkan siapa saja yang menjadi ahli waris dari pewaris yang meninggal dunia.', requirements: ['KTP asli', 'KK asli', 'Akta kelahiran seluruh anak almarhum', 'Buku nikah almarhum', 'Surat keterangan kematian almarhum', 'Surat keterangan kematian orang tua almarhum jika sudah meninggal', 'Surat keterangan ahli waris dari desa/kelurahan', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–7 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Persidangan', 'Pemeriksaan bukti silsilah', 'Penetapan ahli waris'] },
+            { id: 8, title: 'Penetapan Wali Adhol', category: 'Perkawinan', icon: 'user-cog', shortDesc: 'Permohonan penggantian wali nikah karena wali nasab enggan atau menolak menikahkan.', fullDesc: 'Permohonan penggantian wali nikah karena wali nasab enggan atau menolak menikahkan.', requirements: ['KTP / Surat Keterangan Domisili asli', 'Buku nikah orang tua', 'KK pemohon', 'Surat keterangan penolakan dari KUA', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–4 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Persidangan', 'Upaya mediasi wali nasab oleh hakim', 'Penetapan wali hakim'] },
+            { id: 9, title: 'Hak Asuh Anak', category: 'Perceraian', icon: 'shield-check', shortDesc: 'Pengajuan hak pemeliharaan anak pasca perceraian.', fullDesc: 'Pengajuan hak pemeliharaan anak pasca perceraian.', requirements: ['Fotocopy KTP / Surat keterangan domisili', 'Fotocopy akta cerai', 'Fotocopy akta kelahiran anak', 'Alamat lengkap mantan suami/istri', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–3 dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Persidangan', 'Pemeriksaan kelayakan pengasuhan', 'Putusan hak asuh'] },
+            { id: 10, title: 'Perwalian oleh Orang Tua', category: 'Lainnya', icon: 'user-plus', shortDesc: 'Pengajuan perwalian oleh salah satu orang tua karena alasan tertentu.', fullDesc: 'Pengajuan perwalian oleh salah satu orang tua karena alasan tertentu (misalnya pasangan meninggal).', requirements: ['KTP / Surat keterangan domisili asli pemohon', 'KK pemohon', 'Buku nikah pemohon', 'Akta kelahiran anak', 'Akta kematian orang tua anak yang meninggal', 'Surat obyek yang membutuhkan perwalian', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–6 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan saksi', 'Sidang penetapan', 'Penetapan perwalian'] },
+            { id: 11, title: 'Pengangkatan Anak (Adopsi)', category: 'Lainnya', icon: 'smile', shortDesc: 'Prosedur pengangkatan anak secara sah menurut hukum.', fullDesc: 'Prosedur pengangkatan anak secara sah menurut hukum.', requirements: ['KTP dan KK Calon Orang Tua Angkat', 'Fotocopy Akta Kelahiran & Buku Nikah Calon Orang Tua Angkat', 'Surat Keterangan Sehat & Kesehatan Jiwa dari RS Pemerintah', 'SKCK Setempat', 'Fotocopy KK & Buku Nikah Orang Tua Kandung', 'Fotocopy Akta Kelahiran Anak', 'Rekomendasi Instansi Sosial & Izin Pengangkatan Anak', 'Surat Izin Orang Tua Kandung bermeterai', 'Surat Keterangan Tidak Mampu/Meninggal Dunia (jika perlu)', 'Surat Keterangan Penghasilan & Pernyataan kepentingan terbaik anak bermeterai', 'Kronologis anak & Jaminan keabsahan dokumen bermeterai', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran', 'Home visit oleh Pekerja Sosial', 'Sidang pembuktian', 'Penetapan Adopsi'] },
+            { id: 12, title: 'Izin Poligami', category: 'Perkawinan', icon: 'copy-plus', shortDesc: 'Pengajuan izin bagi suami untuk beristri lebih dari satu orang.', fullDesc: 'Pengajuan izin bagi suami untuk beristri lebih dari satu orang.', requirements: ['KTP Pemohon, Isteri Pertama & Calon Isteri', 'KK Pemohon & Buku Nikah', 'Surat Izin Atasan jika PNS/POLRI/TNI', 'Surat Keterangan Status Calon Isteri & Penghasilan dari Desa', 'Surat Pernyataan Sanggup Berlaku Adil bermeterai', 'Surat Pernyataan Tidak Keberatan Dimadu dari Isteri Pertama', 'Surat Pernyataan Siap menjadi Isteri Kedua', 'Surat Keterangan Harta Bersama dengan Isteri Pertama', 'Surat Pernyataan Calon Isteri tidak akan mengganggu harta bersama', 'Email dan Whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–11 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Sidang pemeriksaan kemampuan finansial', 'Pemeriksaan persetujuan isteri pertama', 'Putusan Izin Poligami'] },
+            { id: 13, title: 'Gugatan Waris', category: 'Kewarisan', icon: 'landmark', shortDesc: 'Sengketa pembagian harta warisan di antara para ahli waris.', fullDesc: 'Sengketa pembagian harta warisan di antara para ahli waris.', requirements: ['KTP / Surat Keterangan Domisili Asli Penggugat', 'Akta Kematian Pewaris & Akta Kematian Ahli Waris', 'Akta Kelahiran & KK para Penggugat', 'Silsilah/Ranji Keluarga Pewaris and Ahli Waris', 'Bukti Kepemilikan Harta yang digugat', 'Email dan Whatsapp yang aktif', 'Surat Gugatan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–7 difotocopy and dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Upaya Mediasi (Wajib)', 'Sidang Jawab-Menjawab', 'Pembuktian & Pemeriksaan Setempat (Descente)', 'Putusan Pembagian'] },
+            { id: 14, title: 'Layanan E-Court (E-Litigation)', category: 'Lainnya', icon: 'monitor', shortDesc: 'Alur tata cara persidangan secara elektronik di Pengadilan Agama Kuala Tungkal.', fullDesc: 'Alur tata cara persidangan secara elektronik di Pengadilan Agama Kuala Tungkal.', requirements: ['Memiliki akun E-Court yang sudah terverifikasi', 'Persetujuan tertulis dari para pihak untuk beracara secara elektronik', 'Dokumen bukti dalam format digital (PDF/JPG)', 'Alamat email aktif untuk menerima notifikasi persidangan'], procedures: ['Sidang Pertama & Persetujuan', 'Mediasi', 'Jawab-Menjawab (E-Litigation)', 'Pembuktian Dokumen Digital', 'Kesimpulan & Putusan Elektronik'] },
+            { id: 15, title: 'Harta Bersama (Gono Gini)', category: 'Perceraian', icon: 'coins', shortDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.', fullDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.', requirements: ['Fotocopy KTP / Surat Keterangan Domisili Asli Penggugat', 'Fotocopy Bukti Kepemilikan Harta dilegalisir di Kantor Pos', 'Fotocopy Akta Cerai Penggugat dilegalisir di Kantor Pos', 'Email dan Whatsapp yang aktif', 'Surat Gugatan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran', 'Mediasi', 'Pembuktian kepemilikan harta', 'Putusan Pembagian'] }
         ];
 
         const categories = ['Semua', 'Perkawinan', 'Perceraian', 'Kewarisan', 'Lainnya'];
@@ -649,10 +381,10 @@
             }
 
             grid.innerHTML = filtered.map(s => `
-                <div class="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer" onclick="openModal(${s.id})">
+                <div class="service-card-bg rounded-2xl border border-emerald-50 p-6 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer" onclick="openModal(${s.id})">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                            <i data-lucide="file-text"></i>
+                            <i data-lucide="${s.icon}"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-emerald-700">${s.title}</h3>
                         <p class="text-gray-500 text-sm line-clamp-2">${s.shortDesc}</p>
@@ -689,7 +421,7 @@
             header.innerHTML = `
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 shrink-0 border border-emerald-100">
-                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                        <i data-lucide="${s.icon}" class="w-6 h-6"></i>
                     </div>
                     <div>
                         <h2 class="text-xl md:text-2xl font-bold text-gray-900">${s.title}</h2>
