@@ -43,37 +43,28 @@
             background-color: #f7fffb; 
         }
 
-        /* --- Animasi Ombak --- */
+        /* --- Animasi Ombak (Ditinggikan & Diperbanyak) --- */
         .waves {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            min-height: 100px;
-            max-height: 150px;
+            height: 180px;
+            min-height: 180px;
+            max-height: 250px;
             z-index: 1;
         }
 
         .parallax > use {
             animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
         }
-        .parallax > use:nth-child(1) {
-            animation-delay: -2s;
-            animation-duration: 7s;
-        }
-        .parallax > use:nth-child(2) {
-            animation-delay: -3s;
-            animation-duration: 10s;
-        }
-        .parallax > use:nth-child(3) {
-            animation-delay: -4s;
-            animation-duration: 13s;
-        }
-        .parallax > use:nth-child(4) {
-            animation-delay: -5s;
-            animation-duration: 20s;
-        }
+        .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+        .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+        .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+        .parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+        .parallax > use:nth-child(5) { animation-delay: -6s; animation-duration: 11s; }
+        .parallax > use:nth-child(6) { animation-delay: -7s; animation-duration: 15s; }
+        .parallax > use:nth-child(7) { animation-delay: -8s; animation-duration: 25s; }
 
         @keyframes move-forever {
             0% { transform: translate3d(-90px, 0, 0); }
@@ -82,8 +73,8 @@
 
         @media (max-width: 768px) {
             .waves {
-                height: 40px;
-                min-height: 40px;
+                height: 80px;
+                min-height: 80px;
             }
         }
     </style>
@@ -111,8 +102,8 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH WAVE ANIMATION -->
-    <section class="relative pt-12 md:pt-20 pb-32 px-4 overflow-hidden bg-gradient-to-b from-emerald-50/30 to-white text-center">
+    <!-- HERO SECTION WITH MORE WAVE LAYERS -->
+    <section class="relative pt-12 md:pt-20 pb-56 px-4 overflow-hidden bg-gradient-to-b from-emerald-50/30 to-white text-center">
         <!-- Decorative background blur -->
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-100 rounded-full blur-3xl opacity-40 -z-10"></div>
 
@@ -147,17 +138,20 @@
             </div>
         </div>
 
-        <!-- Wave SVG Element -->
+        <!-- Wave SVG Element (Increased Height & Layers) -->
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(16, 185, 129, 0.03)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(16, 185, 129, 0.05)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(16, 185, 129, 0.02)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(16, 185, 129, 0.02)" />
+                <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(16, 185, 129, 0.04)" />
+                <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(16, 185, 129, 0.01)" />
+                <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(16, 185, 129, 0.03)" />
+                <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(16, 185, 129, 0.02)" />
+                <use xlink:href="#gentle-wave" x="48" y="10" fill="rgba(16, 185, 129, 0.01)" />
+                <use xlink:href="#gentle-wave" x="48" y="12" fill="#fff" />
             </g>
         </svg>
     </section>
@@ -360,7 +354,7 @@
             { id: 12, title: 'Izin Poligami', category: 'Perkawinan', icon: 'copy-plus', shortDesc: 'Pengajuan izin bagi suami untuk beristri lebih dari satu orang.', fullDesc: 'Pengajuan izin bagi suami untuk beristri lebih dari satu orang.', requirements: ['KTP Pemohon, Isteri Pertama & Calon Isteri', 'KK Pemohon & Buku Nikah', 'Surat Izin Atasan jika PNS/POLRI/TNI', 'Surat Keterangan Status Calon Isteri & Penghasilan dari Desa', 'Surat Pernyataan Sanggup Berlaku Adil bermeterai', 'Surat Pernyataan Tidak Keberatan Dimadu dari Isteri Pertama', 'Surat Pernyataan Siap menjadi Isteri Kedua', 'Surat Keterangan Harta Bersama dengan Isteri Pertama', 'Surat Pernyataan Calon Isteri tidak akan mengganggu harta bersama', 'Email dan Whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–11 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Sidang pemeriksaan kemampuan finansial', 'Pemeriksaan persetujuan isteri pertama', 'Putusan Izin Poligami'] },
             { id: 13, title: 'Gugatan Waris', category: 'Kewarisan', icon: 'landmark', shortDesc: 'Sengketa pembagian harta warisan di antara para ahli waris.', fullDesc: 'Sengketa pembagian harta warisan di antara para ahli waris.', requirements: ['KTP / Surat keterangan domisili asli Penggugat', 'Akta Kematian Pewaris & Akta Kematian Ahli Waris', 'Akta Kelahiran & KK para Penggugat', 'Silsilah/Ranji Keluarga Pewaris and Ahli Waris', 'Bukti Kepemilikan Harta yang digugat', 'Email dan Whatsapp yang aktif', 'Surat Gugatan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–7 difotocopy and dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Upaya Mediasi (Wajib)', 'Sidang Jawab-Menjawab', 'Pembuktian & Pemeriksaan Setempat (Descente)', 'Putusan Pembagian'] },
             { id: 14, title: 'Layanan E-Court (E-Litigation)', category: 'Lainnya', icon: 'monitor', shortDesc: 'Alur tata cara persidangan secara elektronik di Pengadilan Agama Kuala Tungkal.', fullDesc: 'Alur tata cara persidangan secara elektronik di Pengadilan Agama Kuala Tungkal.', requirements: ['Memiliki akun E-Court yang sudah terverifikasi', 'Persetujuan tertulis dari para pihak untuk beracara secara elektronik', 'Dokumen bukti dalam format digital (PDF/JPG)', 'Alamat email aktif untuk menerima notifikasi persidangan'], procedures: ['Sidang Pertama & Persetujuan', 'Mediasi', 'Jawab-Menjawab (E-Litigation)', 'Pembuktian Dokumen Digital', 'Kesimpulan & Putusan Elektronik'] },
-            { id: 15, title: 'Harta Bersama (Gono Gini)', category: 'Perceraian', icon: 'coins', shortDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.', fullDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.', requirements: ['Fotocopy KTP / Surat Keterangan Domisili Asli Penggugat', 'Fotocopy Bukti Kepemilikan Harta dilegalisir di Kantor Pos', 'Fotocopy Akta Cerai Penggugat dilegalisir di Kantor Pos', 'Email dan Whatsapp yang aktif', 'Surat Gugatan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran', 'Mediasi', 'Pembuktian kepemilikan harta', 'Putusan Pembagian'] }
+            { id: 15, title: 'Harta Bersama (Gono Gini)', category: 'Perceraian', icon: 'coins', shortDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.', fullDesc: 'Gugatan pembagian harta yang diperoleh selama masa perkawinan.', requirements: ['Fotocopy KTP / Surat keterangan domisili asli Penggugat', 'Fotocopy Bukti Kepemilikan Harta dilegalisir di Kantor Pos', 'Fotocopy Akta Cerai Penggugat dilegalisir di Kantor Pos', 'Email dan Whatsapp yang aktif', 'Surat Gugatan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran', 'Mediasi', 'Pembuktian kepemilikan harta', 'Putusan Pembagian'] }
         ];
 
         const categories = ['Semua', 'Perkawinan', 'Perceraian', 'Kewarisan', 'Lainnya'];
