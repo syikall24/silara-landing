@@ -43,7 +43,7 @@
             background-color: #f7fffb; 
         }
 
-        /* --- Animasi Ombak (Dibelakang Search Bar) --- */
+        /* --- Animasi Ombak --- */
         .waves {
             position: absolute;
             bottom: 0;
@@ -102,13 +102,11 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (REDUCED BOTTOM PADDING) -->
+    <!-- HERO SECTION -->
     <section class="relative pt-12 md:pt-20 pb-4 px-4 overflow-hidden bg-gradient-to-b from-emerald-50/30 to-white text-center">
-        <!-- Decorative background blur -->
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-100 rounded-full blur-3xl opacity-40 -z-10"></div>
 
         <div class="max-w-4xl mx-auto relative z-10">
-            <!-- Hero Logo -->
             <img src="https://raw.githubusercontent.com/syikall24/silara-landing/main/PA_Tungkal.png" alt="Logo PA" class="w-24 md:w-28 h-auto mx-auto mb-6 drop-shadow-sm">
             
             <p class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">Digital Government Service</p>
@@ -138,7 +136,6 @@
             </div>
         </div>
 
-        <!-- Wave SVG Element (Z-INDEX 0 - BEHIND CONTENT) -->
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
@@ -156,7 +153,7 @@
         </svg>
     </section>
 
-    <!-- DIRECTORY SECTION (REDUCED TOP PADDING) -->
+    <!-- DIRECTORY SECTION -->
     <section id="direktori" class="bg-gray-50 pt-4 pb-16 px-4 border-t border-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="mb-10">
@@ -179,61 +176,62 @@
                 <div>
                     <span class="inline-block px-2.5 py-1 bg-amber-200 text-amber-800 text-[10px] font-bold rounded mb-2 uppercase">Pengumuman Resmi</span>
                     <h4 class="font-bold text-gray-900 text-lg mb-1">SK Dirjen Badilag Nomor 932/DJA/SK.TI1.3/VII/2025</h4>
-                    <p class="text-gray-700 text-sm leading-relaxed">Mulai 01 Juli 2025, Pengadilan Agama Kuala Tungkal menerapkan penerbitan dan pengambilan Akta Cerai secara Elektronik melalui aplikasi EAC.</p>
+                    <p class="text-gray-700 text-sm leading-relaxed font-medium">Mulai 01 Juli 2025, Pengadilan Agama Kuala Tungkal menerapkan penerbitan dan pengambilan Akta Cerai secara Elektronik melalui aplikasi EAC.</p>
                 </div>
             </div>
 
             <div class="flex flex-col lg:flex-row gap-12 items-start">
                 <div class="lg:w-1/3">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">Akses Layanan EAC</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Elektronik Akta Cerai (EAC) memberikan kemudahan bagi masyarakat untuk mengakses produk pengadilan secara mandiri, cepat, dan transparan.</p>
-                    <a href="https://eac.mahkamahagung.go.id/" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg w-full group">
-                        Buka Website Portal EAC <i data-lucide="external-link" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-lg">Elektronik Akta Cerai (EAC) memberikan kemudahan bagi masyarakat untuk mengakses produk pengadilan secara mandiri, cepat, dan transparan.</p>
+                    <a href="https://eac.mahkamahagung.go.id/" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg w-full group text-lg">
+                        Buka Website Portal EAC <i data-lucide="external-link" class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
 
-                <div class="lg:w-2/3 bg-gray-50 rounded-3xl p-6 md:p-8 border border-gray-100">
-                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8 text-center uppercase">Alur Panduan Pengambilan Produk</h3>
+                <div class="lg:w-2/3 bg-gray-50 rounded-3xl p-6 md:p-10 border border-gray-100">
+                    <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-10 text-center">Alur Panduan Pengambilan Produk</h3>
                     
-                    <p class="text-center text-gray-600 text-sm mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Ikuti 5 langkah mudah berikut untuk melakukan pendaftaran hingga pengambilan produk secara mandiri melalui sistem EAC.
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
-                        <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-gray-200 z-0"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+                        <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-emerald-100 z-0"></div>
                         
+                        <!-- Step 1 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">1</div>
-                            <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pendaftaran Akun</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
+                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">1</div>
+                            <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pendaftaran Akun</h4>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
                         </div>
+                        <!-- Step 2 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">2</div>
-                            <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Login Aplikasi</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
+                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">2</div>
+                            <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Login Aplikasi</h4>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
                         </div>
+                        <!-- Step 3 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">3</div>
-                            <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pemeriksaan Produk</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil.</p>
+                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">3</div>
+                            <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pemeriksaan Produk</h4>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil.</p>
                         </div>
+                        <!-- Step 4 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">4</div>
-                            <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pembayaran</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
+                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">4</div>
+                            <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pembayaran</h4>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
                         </div>
+                        <!-- Step 5 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold mb-4 shadow-sm">5</div>
-                            <h4 class="font-bold text-[11px] mb-2 leading-tight uppercase">Pengambilan Produk</h4>
-                            <p class="text-[9px] text-gray-500 leading-tight">Setelah tervalidasi, tombol unduh muncul. Pengunduhan hanya satu kali.</p>
+                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">5</div>
+                            <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pengambilan Produk</h4>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Setelah tervalidasi, tombol unduh muncul. Pengunduhan hanya satu kali.</p>
                         </div>
                     </div>
 
-                    <div class="mt-10 bg-white p-5 rounded-xl border border-red-100 shadow-sm">
-                        <h4 class="font-bold text-red-600 text-xs mb-3 flex items-center gap-2">
-                            <i data-lucide="alert-circle" class="w-4 h-4"></i> Penting untuk Diperhatikan:
+                    <div class="mt-12 bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 shadow-sm">
+                        <h4 class="font-bold text-emerald-700 text-sm mb-3 flex items-center gap-2">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-emerald-600"></i> Penting untuk Diperhatikan:
                         </h4>
-                        <ul class="text-[11px] text-gray-600 space-y-2 list-disc pl-5 leading-relaxed">
+                        <ul class="text-sm text-gray-700 space-y-2 list-disc pl-5 leading-relaxed font-medium">
                             <li>Pengunduhan dokumen hanya bisa dilakukan <strong>satu kali</strong> untuk setiap satu kali pembayaran.</li>
                             <li>Jika Anda ingin mengunduh kembali, Anda harus melakukan pembayaran ulang mengikuti prosedur yang sama.</li>
                             <li>Simpan dokumen PDF Anda di tempat yang aman setelah berhasil diunduh.</li>
@@ -311,9 +309,16 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex gap-6">
-                <a href="https://forms.gle/xrtspGSQQrzJpzZ68" target="_blank" class="text-[11px] text-emerald-400 hover:text-white transition-colors font-bold uppercase tracking-wider">SURVEY KEPUASAN</a>
+                <!-- Highlighted Survey Kepuasan Button -->
+                <a href="https://forms.gle/xrtspGSQQrzJpzZ68" target="_blank" class="flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl text-sm font-extrabold uppercase tracking-wider transition-all shadow-xl hover:shadow-emerald-500/20 hover:-translate-y-1 active:translate-y-0 group border border-emerald-400/30">
+                    <div class="bg-amber-400 p-1.5 rounded-lg text-emerald-950 shadow-inner group-hover:scale-110 transition-transform">
+                        <i data-lucide="star" class="w-4 h-4 fill-emerald-950"></i>
+                    </div>
+                    <span>SURVEY KEPUASAN</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
             <p class="text-[11px] text-emerald-500 font-bold uppercase tracking-widest">&copy; 2026 PENGADILAN AGAMA KUALA TUNGKAL</p>
         </div>
@@ -342,7 +347,7 @@
         const services = [
             { id: 1, title: 'Pos Bantuan Hukum (Posbakum)', category: 'Lainnya', icon: 'heart-handshake', shortDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak...', fullDesc: 'Layanan bantuan hukum di PTSP Pengadilan Agama Kuala Tungkal. Petugas Posbakum membantu para pihak dalam pembuatan surat gugatan atau permohonan secara GRATIS. Jam Pelayanan: Senin-Jumat 08.00-16.00 (Istirahat: 12.00-14.00).', requirements: ['Membawa berkas persyaratan yang lengkap sesuai dengan perkara yang akan diajukan', 'Membawa KTP asli / Surat Keterangan', 'Membawa Fotokopi KTP dan KK', 'Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan/Desa (Khusus layanan Prodeo)'], procedures: ['Mengambil nomor antrean layanan Posbakum di mesin antrean PTSP', 'Menunggu panggilan sesuai nomor antrean', 'Konsultasi dan pembuatan draf gugatan/permohonan oleh petugas', 'Pemeriksaan kembali (Review) draf oleh pihak yang bersangkutan', 'Pencetakan (Printing) surat gugatan/permohonan yang telah selesai', 'Penandatanganan dokumen oleh pihak dan penyerahan ke Meja Pendaftaran'] },
             { id: 2, title: 'Cerai Gugat / Talak', category: 'Perceraian', icon: 'heart-off', shortDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak).', fullDesc: 'Prosedur pengajuan cerai baik oleh istri (Gugat) maupun suami (Talak) sesuai peraturan perundang-undangan.', requirements: ['KTP / Surat keterangan domisili asli and fotocopy', 'Buku nikah asli and fotocopy dilegalisir di kantor pos', 'Alamat lengkap suami/istri', 'Surat izin atasan jika PNS/POLRI/TNI/P3K', 'Email dan nomor whatsapp yang aktif', 'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Fotocopy menggunakan ukuran kertas A4'], procedures: ['Pendaftaran perkara di Meja 1 / E-Court', 'Pembayaran Panjar Biaya Perkara', 'Pemanggilan para pihak oleh Jurusita', 'Proses Mediasi', 'Persidangan', 'Putusan Pengadilan'] },
-            { id: 3, title: 'Dispensasi Kawin', category: 'Perkawinan', icon: 'calendar-clock', shortDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.', fullDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.', requirements: ['KTP / Surat domisili asli kedua orang tua calon pengantin yang di bawah umur', 'KTP / surat domisili asli kedua calon pengantin', 'KK kedua calon pengantin', 'Akta kelahiran kedua calon pengantin', 'Ijazah terakhir kedua calon pengantin', 'Surat keterangan penolakan dari KUA', 'Asesmen psikolog', 'Pemeriksaan kesehatan lengkap dan/atau kesiapan organ reproduksi dari Puskesmas/RSUD', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–8 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan identitas dan alasan mendesak', 'Persidangan dengan menghadirkan calon mempelai dan orang tua', 'Penetapan Hakim'] },
+            { id: 3, title: 'Dispensasi Kawin', category: 'Perkawinan', icon: 'calendar-clock', shortDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.', fullDesc: 'Permohonan bagi calon mempelai yang usianya di bawah batas minimal pernikahan.', requirements: ['KTP / Surat domisili asli kedua orang tua calon pengantin yang di bawah umur', 'KTP / surat domisili asli kedua calon pengantin', 'KK kedua calon pengantin', 'Akta kelahiran kedua calon pengantin', 'Ijazah terakhir kedua calon pengantin', 'Surat keterangan penolakan dari KUA', 'Asesmen psikolog', 'Pemeriksaan kesehatan lengkap dan/atau kesiapan organ reproduksi dari RS Pemerintah', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–8 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan identitas dan alasan mendesak', 'Persidangan dengan menghadirkan calon mempelai dan orang tua', 'Penetapan Hakim'] },
             { id: 4, title: 'Isbat Nikah', category: 'Perkawinan', icon: 'scroll', shortDesc: 'Pengesahan pernikahan yang sudah terjadi namun belum tercatat secara resmi.', fullDesc: 'Pengesahan pernikahan yang sudah terjadi namun belum tercatat secara resmi.', requirements: ['KTP asli and fotocopy kedua pemohon', 'KK asli kedua pemohon', 'Fotocopy akta cerai bagi pemohon berstatus duda atau janda', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–3 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan saksi-saksi', 'Sidang pembuktian', 'Penetapan pengesahan'] },
             { id: 5, title: 'Isbat Nikah - Cerai Gugat/Talak', category: 'Perceraian', icon: 'files', shortDesc: 'Pengesahan nikah sekaligus pengajuan perceraian dalam satu perkara.', fullDesc: 'Pengesahan nikah sekaligus pengajuan perceraian dalam satu perkara.', requirements: ['KTP asli and fotocopy Penggugat/Pemohon', 'KK asli Penggugat/Pemohon', 'Fotocopy KTP atau KK Tergugat/Termohon', 'Fotocopy akta cerai bagi Penggugat/Pemohon berstatus duda atau janda', 'Email dan whatsapp yang aktif', 'Surat Gugatan/Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–4 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Pemeriksaan saksi untuk pernikahan', 'Pemeriksaan alasan perceraian', 'Putusan / Penetapan'] },
             { id: 6, title: 'Penetapan Asal Usul Anak', category: 'Lainnya', icon: 'baby', shortDesc: 'Permohonan untuk menetapkan status hukum anak terhadap orang tuanya.', fullDesc: 'Permohonan untuk menetapkan status hukum anak terhadap orang tuanya.', requirements: ['Buku nikah asli', 'KK asli', 'Akta kelahiran anak / Surat keterangan lahir asli', 'Email dan whatsapp yang aktif', 'Surat Permohonan 5 Rangkap (Pembuatan Gratis di Posbakum)', 'Catatan: Poin 1–3 difotocopy dan dilegalisir di kantor pos (ukuran kertas A4)'], procedures: ['Pendaftaran', 'Persidangan', 'Pemeriksaan saksi', 'Penetapan hakim'] },
@@ -382,7 +387,7 @@
                             <i data-lucide="${s.icon}"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-emerald-700">${s.title}</h3>
-                        <p class="text-gray-500 text-sm line-clamp-2">${s.shortDesc}</p>
+                        <p class="text-gray-500 text-sm line-clamp-2 font-medium">${s.shortDesc}</p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
                         <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">${s.category}</span>
@@ -396,7 +401,7 @@
         function renderTabs() {
             const container = document.getElementById('category-tabs');
             container.innerHTML = categories.map(cat => `
-                <button onclick="setTab('${cat}')" class="px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${currentTab === cat ? 'bg-gray-900 text-white shadow-md' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-100'}">
+                <button onclick="setTab('${cat}')" class="px-5 py-2.5 rounded-full text-sm font-bold transition-all ${currentTab === cat ? 'bg-gray-900 text-white shadow-md' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-100'}">
                     ${cat}
                 </button>
             `).join('');
@@ -419,7 +424,7 @@
                         <i data-lucide="${s.icon}" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h2 class="text-xl md:text-2xl font-bold text-gray-900">${s.title}</h2>
+                        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900">${s.title}</h2>
                         <div class="flex items-center gap-2 mt-1">
                             <span class="text-[10px] font-bold text-emerald-700 uppercase bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">${s.category}</span>
                             <span class="text-[10px] text-gray-400 font-bold flex items-center gap-1"><i data-lucide="info" class="w-3 h-3"></i> INFORMASI PUBLIK</span>
@@ -431,36 +436,36 @@
 
             document.getElementById('modal-body').innerHTML = `
                 <div class="mb-8">
-                    <h3 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-4">
+                    <h3 class="text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-4">
                         RINGKASAN LAYANAN <div class="h-px bg-gray-100 flex-1"></div>
                     </h3>
-                    <p class="text-gray-700 leading-relaxed text-base">${s.fullDesc}</p>
+                    <p class="text-gray-800 leading-relaxed text-lg font-medium">${s.fullDesc}</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-[#f8fafc] p-6 rounded-2xl border border-[#edf2f7]">
-                        <h4 class="font-bold text-gray-900 mb-5 flex items-center gap-2">
-                            <i data-lucide="list" class="w-5 h-5 text-emerald-600"></i> PERSYARATAN BERKAS
+                        <h4 class="font-extrabold text-gray-900 mb-5 flex items-center gap-2">
+                            <i data-lucide="list" class="w-6 h-6 text-emerald-600"></i> PERSYARATAN BERKAS
                         </h4>
                         <ul class="space-y-4">
                             ${s.requirements.map(req => `
-                                <li class="flex items-start gap-3 text-[13px] text-gray-600 leading-snug">
-                                    <i data-lucide="chevron-right" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <li class="flex items-start gap-3 text-sm md:text-base text-gray-700 leading-snug font-medium">
+                                    <i data-lucide="chevron-right" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
                                     <span>${req}</span>
                                 </li>
                             `).join('')}
                         </ul>
                     </div>
                     <div class="bg-[#f8fafc] p-6 rounded-2xl border border-[#edf2f7]">
-                        <h4 class="font-bold text-gray-900 mb-5 flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i> TAHAPAN PROSEDUR
+                        <h4 class="font-extrabold text-gray-900 mb-5 flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i> TAHAPAN PROSEDUR
                         </h4>
                         <div class="space-y-6 relative">
                             ${s.procedures.map((proc, i) => `
                                 <div class="flex gap-4 items-start relative">
-                                    <div class="w-6 h-6 rounded-full bg-white border border-emerald-200 flex items-center justify-center text-[11px] font-bold text-emerald-600 shrink-0 z-10">
+                                    <div class="w-7 h-7 rounded-full bg-white border-2 border-emerald-200 flex items-center justify-center text-xs font-black text-emerald-600 shrink-0 z-10 shadow-sm">
                                         ${i + 1}
                                     </div>
-                                    <p class="text-[13px] text-gray-600 leading-tight pt-1">${proc}</p>
+                                    <p class="text-sm md:text-base text-gray-700 leading-tight pt-1 font-medium">${proc}</p>
                                 </div>
                             `).join('')}
                         </div>
@@ -498,7 +503,7 @@
             lucide.createIcons();
             const chips = ['Posbakum', 'Gono Gini', 'Waris', 'E-Court', 'Isbat Nikah'];
             document.getElementById('quick-links').innerHTML += chips.map(c => `
-                <button onclick="document.getElementById('search-input').value='${c}'; searchQuery='${c}'; renderServices();" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-600 hover:border-emerald-500 transition-all shadow-sm">${c}</button>
+                <button onclick="document.getElementById('search-input').value='${c}'; searchQuery='${c}'; renderServices();" class="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-bold text-gray-600 hover:border-emerald-500 transition-all shadow-sm">${c}</button>
             `).join('');
         }
     </script>
