@@ -72,6 +72,33 @@
             100% { transform: translate3d(85px, 0, 0); }
         }
 
+        /* --- Animasi Berjalan pada Langkah (Step Pulse) --- */
+        @keyframes step-highlight {
+            0%, 20%, 100% { 
+                transform: scale(1); 
+                border-color: #d1fae5; 
+                background-color: white;
+                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            }
+            10% { 
+                transform: scale(1.15); 
+                border-color: #10b981; 
+                background-color: #ecfdf5;
+                box-shadow: 0 0 15px 5px rgba(16, 185, 129, 0.2);
+            }
+        }
+
+        .step-circle {
+            animation: step-highlight 7.5s infinite; /* Durasi total siklus 1.5 detik per langkah x 5 */
+        }
+
+        /* Delay berurutan untuk setiap langkah */
+        .step-1 { animation-delay: 0s; }
+        .step-2 { animation-delay: 1.5s; }
+        .step-3 { animation-delay: 3s; }
+        .step-4 { animation-delay: 4.5s; }
+        .step-5 { animation-delay: 6s; }
+
         @media (max-width: 768px) {
             .waves {
                 height: 250px;
@@ -118,6 +145,7 @@
                 Pusat Layanan Informasi yang Cepat, Mudah, dan Efisien dalam Satu Sistem Terpadu Pengadilan Agama Kuala Tungkal.
             </p>
 
+            <!-- Search Bar with Clear Button -->
             <div class="relative max-w-2xl mx-auto group text-left">
                 <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                     <i data-lucide="search" class="h-6 w-6 text-gray-400"></i>
@@ -133,6 +161,7 @@
                 </button>
             </div>
 
+            <!-- Quick Links -->
             <div class="mt-8 flex flex-wrap justify-center items-center gap-2 md:gap-3 text-sm" id="quick-links">
                 <span class="text-gray-400 font-medium uppercase tracking-wide text-[10px] w-full md:w-auto mb-2 md:mb-0">Sering Dicari:</span>
             </div>
@@ -192,35 +221,40 @@
                 </div>
 
                 <div class="lg:w-2/3 bg-gray-50 rounded-3xl p-6 md:p-10 border border-gray-100">
-                    <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-10 text-center uppercase text-center">Alur Panduan Pengambilan Produk</h3>
+                    <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-10 text-center uppercase">Alur Panduan Pengambilan Produk</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
                         <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-emerald-100 z-0"></div>
                         
+                        <!-- Step 1 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">1</div>
+                            <div class="step-circle step-1 w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm transition-all">1</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pendaftaran Akun</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
                         </div>
+                        <!-- Step 2 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">2</div>
+                            <div class="step-circle step-2 w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm transition-all">2</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Login Aplikasi</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
                         </div>
+                        <!-- Step 3 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">3</div>
+                            <div class="step-circle step-3 w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm transition-all">3</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pemeriksaan Produk</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil.</p>
                         </div>
+                        <!-- Step 4 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">4</div>
+                            <div class="step-circle step-4 w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm transition-all">4</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pembayaran</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
                         </div>
+                        <!-- Step 5 -->
                         <div class="flex flex-col items-center text-center relative z-10">
-                            <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">5</div>
+                            <div class="step-circle step-5 w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm transition-all">5</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pengambilan Produk</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Setelah tervalidasi, tombol unduh muncul. Pengunduhan hanya satu kali.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Setelah tervalidasi, tombol unduh muncul. Pengunduhan hanya satu kali.</p>
                         </div>
                     </div>
 
@@ -254,7 +288,6 @@
                 </div>
                 <p class="text-sm text-white/90 mb-8 leading-relaxed">Memberikan pelayanan hukum yang berkeadilan, transparan, dan akuntabel bagi seluruh elemen masyarakat di wilayah Kabupaten Tanjung Jabung Barat melalui sistem informasi terpadu yang modern.</p>
                 
-                <!-- Social Media with Stable SVG Icons -->
                 <div class="flex gap-4">
                     <a href="https://m.facebook.com/271835610012760/" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -434,7 +467,7 @@
                     <div>
                         <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 text-left">${s.title}</h2>
                         <div class="flex items-center gap-2 mt-1">
-                            <span class="text-[10px] font-bold text-emerald-700 uppercase bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">${s.category}</span>
+                            <span class="text-[10px] font-bold text-emerald-700 uppercase bg-emerald-100 px-2 py-0.5 rounded border border-emerald-100">${s.category}</span>
                             <span class="text-[10px] text-gray-400 font-bold flex items-center gap-1"><i data-lucide="info" class="w-3 h-3"></i> INFORMASI PUBLIK</span>
                         </div>
                     </div>
