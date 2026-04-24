@@ -39,12 +39,11 @@
             overflow: hidden;
         }
         
-        /* Warna background kartu layanan soft emerald sedikit lebih gelap */
         .service-card-bg {
             background-color: #f0fdf4; 
         }
 
-        /* --- Animasi Ombak (Tinggi & Padat) --- */
+        /* --- Animasi Ombak --- */
         .waves {
             position: absolute;
             bottom: 0;
@@ -109,7 +108,6 @@
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-100 rounded-full blur-3xl opacity-40 -z-10"></div>
 
         <div class="max-w-4xl mx-auto relative z-10">
-            <!-- Hero Logo -->
             <img src="https://raw.githubusercontent.com/syikall24/silara-landing/main/PA_Tungkal.png" alt="Logo PA" class="w-24 md:w-28 h-auto mx-auto mb-6 drop-shadow-sm">
             
             <p class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">Digital Government Service</p>
@@ -120,7 +118,6 @@
                 Pusat Layanan Informasi yang Cepat, Mudah, dan Efisien dalam Satu Sistem Terpadu Pengadilan Agama Kuala Tungkal.
             </p>
 
-            <!-- Search Bar with Clear Button -->
             <div class="relative max-w-2xl mx-auto group text-left">
                 <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                     <i data-lucide="search" class="h-6 w-6 text-gray-400"></i>
@@ -136,13 +133,11 @@
                 </button>
             </div>
 
-            <!-- Quick Links -->
             <div class="mt-8 flex flex-wrap justify-center items-center gap-2 md:gap-3 text-sm" id="quick-links">
                 <span class="text-gray-400 font-medium uppercase tracking-wide text-[10px] w-full md:w-auto mb-2 md:mb-0">Sering Dicari:</span>
             </div>
         </div>
 
-        <!-- Wave SVG Element -->
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
@@ -152,11 +147,10 @@
                 <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(16, 185, 129, 0.02)" />
                 <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(16, 185, 129, 0.04)" />
                 <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(16, 185, 129, 0.01)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(16, 185, 129, 0.03)" />
-                <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(16, 185, 129, 0.02)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(16, 185, 129, 0.05)" />
-                <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(16, 185, 129, 0.02)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(16, 185, 129, 0.03)" />
+                <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(16, 185, 129, 0.02)" />
+                <use xlink:href="#gentle-wave" x="48" y="10" fill="rgba(16, 185, 129, 0.01)" />
+                <use xlink:href="#gentle-wave" x="48" y="12" fill="#fff" />
             </g>
         </svg>
     </section>
@@ -198,40 +192,35 @@
                 </div>
 
                 <div class="lg:w-2/3 bg-gray-50 rounded-3xl p-6 md:p-10 border border-gray-100">
-                    <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-10 text-center uppercase">Alur Panduan Pengambilan Produk</h3>
+                    <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-10 text-center uppercase text-center">Alur Panduan Pengambilan Produk</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
                         <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-emerald-100 z-0"></div>
                         
-                        <!-- Step 1 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">1</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pendaftaran Akun</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Kunjungi situs EAC dan isi formulir pendaftaran dengan data diri lengkap (NIK, WA, Email).</p>
                         </div>
-                        <!-- Step 2 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">2</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Login Aplikasi</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Gunakan username dan password yang telah didapat dari email aktivasi.</p>
                         </div>
-                        <!-- Step 3 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">3</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pemeriksaan Produk</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Pilih menu "Periksa Produk", tentukan produk yang ingin diambil.</p>
                         </div>
-                        <!-- Step 4 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">4</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pembayaran</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Pilih metode pembayaran (VA/Transfer). Tunggu proses validasi petugas.</p>
                         </div>
-                        <!-- Step 5 -->
                         <div class="flex flex-col items-center text-center relative z-10">
                             <div class="w-12 h-12 bg-white border-4 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-extrabold mb-4 shadow-sm">5</div>
                             <h4 class="font-extrabold text-xs mb-3 leading-tight uppercase text-gray-900">Pengambilan Produk</h4>
-                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium">Setelah tervalidasi, tombol unduh muncul. Pengunduhan hanya satu kali.</p>
+                            <p class="text-[13px] md:text-sm text-gray-600 leading-relaxed font-medium text-center">Setelah tervalidasi, tombol unduh muncul. Pengunduhan hanya satu kali.</p>
                         </div>
                     </div>
 
@@ -253,7 +242,6 @@
     <!-- FOOTER -->
     <footer class="bg-[#003820] text-white py-16">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- Col 1: Branding -->
             <div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-14 h-14 shrink-0 overflow-hidden">
@@ -265,17 +253,24 @@
                     </div>
                 </div>
                 <p class="text-sm text-white/90 mb-8 leading-relaxed">Memberikan pelayanan hukum yang berkeadilan, transparan, dan akuntabel bagi seluruh elemen masyarakat di wilayah Kabupaten Tanjung Jabung Barat melalui sistem informasi terpadu yang modern.</p>
+                
+                <!-- Social Media with Stable SVG Icons -->
                 <div class="flex gap-4">
-                    <a href="https://m.facebook.com/271835610012760/" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="https://pa-kualatungkal.go.id/" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all"><i data-lucide="globe" class="w-5 h-5"></i></a>
-                    <a href="https://www.instagram.com/pa.kualatungkal" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://m.facebook.com/271835610012760/" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://pa-kualatungkal.go.id/" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pa.kualatungkal" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
                     <a href="https://www.tiktok.com/@pa.kualatungkal?_r=1&_t=ZS-93uyE4PUPje" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center hover:bg-emerald-500 border border-emerald-800/50 transition-all">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
                     </a>
                 </div>
             </div>
             
-            <!-- Col 2: Kontak -->
             <div class="md:pl-10">
                 <h3 class="font-bold mb-6 text-sm uppercase tracking-widest text-white flex items-center gap-2">
                     <div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div> KONTAK RESMI
@@ -288,7 +283,6 @@
                         </a>
                     </li>
                     <li class="flex gap-4 items-center"><i data-lucide="phone" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span>(0742) 21082</span></li>
-                    <!-- WhatsApp Link with Official Logo -->
                     <li class="flex gap-4 items-center">
                         <a href="https://wa.me/6285185548843" target="_blank" class="flex items-center gap-4 hover:text-emerald-400 transition-colors">
                             <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -299,7 +293,6 @@
                 </ul>
             </div>
             
-            <!-- Col 3: Jam Operasional -->
             <div>
                 <h3 class="font-bold mb-6 text-sm uppercase tracking-widest text-white flex items-center gap-2">
                     <div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div> JAM OPERASIONAL
@@ -325,7 +318,6 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div class="flex gap-6">
-                <!-- Survey Kepuasan Button -->
                 <a href="https://forms.gle/xrtspGSQQrzJpzZ68" target="_blank" class="flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl text-sm font-extrabold uppercase tracking-wider transition-all shadow-xl hover:shadow-emerald-500/20 hover:-translate-y-1 active:translate-y-0 group border border-emerald-400/30">
                     <div class="bg-amber-400 p-1.5 rounded-lg text-emerald-950 shadow-inner group-hover:scale-110 transition-transform">
                         <i data-lucide="star" class="w-4 h-4 fill-emerald-950"></i>
@@ -338,7 +330,7 @@
         </div>
     </footer>
 
-    <!-- MODAL OVERLAY -->
+    <!-- MODAL -->
     <div id="modal-overlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm hidden">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modal-container">
             <div class="flex items-start justify-between p-6 border-b border-gray-100 bg-white" id="modal-header"></div>
@@ -401,9 +393,9 @@
                             <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors shrink-0 shadow-sm border border-emerald-200">
                                 <i data-lucide="${s.icon}"></i>
                             </div>
-                            <h3 class="text-base md:text-lg font-extrabold text-gray-900 leading-tight group-hover:text-emerald-700 transition-colors">${s.title}</h3>
+                            <h3 class="text-base md:text-lg font-extrabold text-gray-900 leading-tight group-hover:text-emerald-700 transition-colors text-left">${s.title}</h3>
                         </div>
-                        <p class="text-gray-500 text-sm line-clamp-2 font-medium">${s.shortDesc}</p>
+                        <p class="text-gray-500 text-sm line-clamp-2 font-medium text-left">${s.shortDesc}</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
                         <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">${s.category}</span>
@@ -440,7 +432,7 @@
                         <i data-lucide="${s.icon}" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900">${s.title}</h2>
+                        <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 text-left">${s.title}</h2>
                         <div class="flex items-center gap-2 mt-1">
                             <span class="text-[10px] font-bold text-emerald-700 uppercase bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">${s.category}</span>
                             <span class="text-[10px] text-gray-400 font-bold flex items-center gap-1"><i data-lucide="info" class="w-3 h-3"></i> INFORMASI PUBLIK</span>
@@ -455,7 +447,7 @@
                     <h3 class="text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-4">
                         RINGKASAN LAYANAN <div class="h-px bg-gray-100 flex-1"></div>
                     </h3>
-                    <p class="text-gray-800 leading-relaxed text-lg font-medium">${s.fullDesc}</p>
+                    <p class="text-gray-800 leading-relaxed text-lg font-medium text-left">${s.fullDesc}</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-[#f8fafc] p-6 rounded-2xl border border-[#edf2f7]">
@@ -464,7 +456,7 @@
                         </h4>
                         <ul class="space-y-4">
                             ${s.requirements.map(req => `
-                                <li class="flex items-start gap-3 text-sm md:text-base text-gray-700 leading-snug font-medium">
+                                <li class="flex items-start gap-3 text-sm md:text-base text-gray-700 leading-snug font-medium text-left">
                                     <i data-lucide="chevron-right" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
                                     <span>${req}</span>
                                 </li>
@@ -481,7 +473,7 @@
                                     <div class="w-7 h-7 rounded-full bg-white border-2 border-emerald-200 flex items-center justify-center text-xs font-black text-emerald-600 shrink-0 z-10 shadow-sm">
                                         ${i + 1}
                                     </div>
-                                    <p class="text-sm md:text-base text-gray-700 leading-tight pt-1 font-medium">${proc}</p>
+                                    <p class="text-sm md:text-base text-gray-700 leading-tight pt-1 font-medium text-left">${proc}</p>
                                 </div>
                             `).join('')}
                         </div>
@@ -508,7 +500,6 @@
             }, 300);
         }
 
-        // Logic Search with Clear Button
         const searchInput = document.getElementById('search-input');
         const clearBtn = document.getElementById('clear-search');
 
